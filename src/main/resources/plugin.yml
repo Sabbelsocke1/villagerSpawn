@@ -1,0 +1,4 @@
+name: VillagerSpawn
+version: '${project.version}'
+main: de.sabbelsocke.villagerspawn.VillagerSpawn
+api-version: 1.19
