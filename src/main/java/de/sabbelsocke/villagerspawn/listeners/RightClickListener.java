@@ -8,6 +8,7 @@ import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -23,18 +24,13 @@ public class RightClickListener implements Listener {
 
         if (player.getItemInHand().getType() == Material.STICK) {
             Location location = player.getLocation();
-            Villager villager = (Villager) player.getWorld().spawnEntity(location.add(1, 1, 0), EntityType.VILLAGER);
+            Villager villager = (Villager) player.getWorld().spawnEntity(location, EntityType.VILLAGER);
             Villager.Profession randomProfession = getRandomProfession();
             villager.setProfession(randomProfession);
-
-
-
         }
     }
 
     private Villager.Profession getRandomProfession() {
         return professions.get(random.nextInt(professions.size()));
     }
-
 }
-
